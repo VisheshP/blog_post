@@ -1,0 +1,185 @@
+<div>
+  <!-- Hero -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <!-- Left copy -->
+      <div class="flex flex-col justify-center h-full">
+        <h1 class="text-5xl font-extrabold text-gray-900 leading-tight">
+          I'm Vishesh Purohit,<br/>Fullstack Developer.
+        </h1>
+        <p class="mt-6 text-gray-600 max-w-xl">
+          Full Stack Developer with 8+ years of experience building scalable SaaS platforms using Ruby on Rails, React, and Python. Skilled in architecting cloud-native solutions on AWS, leading teams, and delivering secure, high-performance applications.
+        </p>
+
+        <!-- Stats row -->
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="flex items-center gap-3 bg-gray-50 p-4 rounded-xl shadow-sm">
+            <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gray-900 text-white">🏆</span>
+            <div>
+              <p class="text-sm text-gray-500">Projects Done</p>
+              <p class="text-lg font-semibold text-gray-900">20+</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-8">
+          <a href="#skills" class="inline-flex items-center gap-2 rounded-md bg-gray-900 px-5 py-3 text-white font-medium hover:bg-black transition">
+            Explore My Work
+            <span class="-mr-1">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: uploaded image -->
+      <div class="">
+        <div class="aspect-[3/4] overflow-hidden rounded-md bg-gray-200 shadow-lg">
+          <%= image_tag 'IMG_5753.jpg', alt: 'Portrait', class: 'h-full w-full object-cover transition-transform duration-500 hover:scale-105' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Skills Section -->
+  <div id="skills" class="border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="flex items-end justify-between gap-6">
+        <div>
+          <p class="uppercase tracking-[0.2em] text-xs text-gray-500 font-semibold">What I Do</p>
+          <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold text-gray-900">Technical Skills</h2>
+        </div>
+      </div>
+
+      <!-- Skills grid -->
+      <div class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <% skills = [
+            { "num": "01.", "title": "Backend Development", "desc": "Proficient in Ruby, Ruby on Rails, and Python with experience building scalable APIs and enterprise SaaS platforms." },
+            { "num": "02.", "title": "Frontend Development", "desc": "Skilled in React, JavaScript, jQuery, AJAX, HTML, and CSS, with expertise in building modular micro-frontend architectures." },
+            { "num": "03.", "title": "API Design", "desc": "Experienced in designing and implementing RESTful APIs with documentation using Swagger." },
+            { "num": "04.", "title": "Databases", "desc": "Hands-on expertise with PostgreSQL and MySQL for designing efficient relational database schemas." },
+            { "num": "05.", "title": "Cloud & DevOps", "desc": "Strong knowledge of AWS (S3, ELB, CloudWatch, EC2, SQS, SNS, RDS), Docker, Convox, and CI/CD pipelines using CircleCI." },
+            { "num": "06.", "title": "Monitoring & Observability", "desc": "Implemented monitoring and performance tuning using Datadog in distributed systems." },
+            { "num": "07.", "title": "Messaging & Event Streaming", "desc": "Worked with Kafka for real-time event streaming and message-driven architectures." },
+            { "num": "08.", "title": "Testing", "desc": "Proficient in RSpec and Cypress for unit, integration, and end-to-end testing in Agile environments." },
+            { "num": "09.", "title": "Architecture & Design Patterns", "desc": "Strong foundation in MVC, Object-Oriented Programming, and applying design patterns to ensure maintainable systems." },
+            { "num": "10.", "title": "Agile Methodologies", "desc": "Experienced in Scrum, Kanban, and Test Driven Development for team collaboration and delivery excellence." },
+            { "num": "11.", "title": "Security", "desc": "Well-versed in addressing OWASP Top 10 vulnerabilities and implementing secure coding practices." },
+            { "num": "12.", "title": "Salesforce", "desc": "Knowledge of Salesforce Administration and Lightning Web Components (LWC) with Salesforce AI Associate certification." }
+        ]
+        %>
+
+        <% skills.each do |s| %>
+          <div class="p-6 rounded-xl border border-gray-200 hover:shadow-md transition">
+            <p class="text-sm font-semibold text-gray-500"><%= s[:num] %></p>
+            <h3 class="mt-4 text-3xl font-bold text-gray-900"><%= s[:title] %></h3>
+            <p class="mt-4 text-gray-600 max-w-md"><%= s[:desc] %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Work Experience Section -->
+  <div id="experience" class="border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="mb-10">
+        <p class="uppercase tracking-[0.2em] text-xs text-gray-500 font-semibold">Most Recent</p>
+        <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold text-gray-900">Work Experience</h2>
+        <p class="mt-3 text-gray-600 max-w-2xl">Highlights of roles, responsibilities, and impact across companies.</p>
+      </div>
+
+      <% experiences = [
+        { 
+            "company": "VigourSoft Global Solutions", 
+            "role": "Member of Technical Staff - 3", 
+            "dates": "July 2024 — Present", 
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png", 
+            "desc": "Worked with Procore client on granular permission controls, migrated UI to modular React MFEs, and engineered scalable features using Python, Ruby on Rails, and React. Implemented Cypress end-to-end testing and improved platform security and flexibility." 
+        },
+        { 
+            "company": "Rently Software Development Pvt Ltd", 
+            "role": "Associate Technical Lead", 
+            "dates": "April 2018 — Feb 2024", 
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png", 
+            "desc": "Designed and deployed scalable web features in a microservices environment, led CI/CD pipelines with CircleCI and Convox, migrated jobs to Sidekiq, and ensured application security against OWASP vulnerabilities. Mentored team members and conducted code reviews." 
+        },
+        { 
+            "company": "Define Labs", 
+            "role": "Jr Software Engineer", 
+            "dates": "Dec 2016 — Mar 2018", 
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png", 
+            "desc": "Developed mobile apps and backend APIs with Ruby on Rails and Android. Managed end-to-end app lifecycle, performed debugging, unit testing, and code reviews for structure and security." 
+        }
+        ]
+    %>
+
+
+      <div class="grid grid-cols-1 gap-8">
+        <% experiences.each do |e| %>
+          <div class="rounded-2xl bg-white border border-gray-200 p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center gap-6 hover:shadow-lg transition">
+            <div class="flex-shrink-0 h-14 w-14 rounded-lg bg-gray-100 flex items-center justify-center overflow-hidden">
+              <%= image_tag e[:logo], alt: e[:company], class: 'h-10 w-10 object-contain' %>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <div>
+                  <h3 class="text-xl font-semibold text-gray-900"><%= e[:company] %></h3>
+                  <p class="text-gray-700"><%= e[:role] %></p>
+                </div>
+                <p class="text-sm text-gray-500"><%= e[:dates] %></p>
+              </div>
+              <p class="mt-3 text-gray-600"><%= e[:desc] %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Let's Chat Section -->
+  <div class="border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <!-- Left: copy and contact -->
+        <div>
+          <p class="uppercase tracking-[0.2em] text-xs text-gray-500 font-semibold">Get In Touch</p>
+          <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold text-gray-900">Let's Chat</h2>
+          <p class="mt-4 text-gray-600 max-w-xl">Have a project in mind or want to collaborate? I’d love to hear from you. Reach out and let’s build something great.</p>
+
+          <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <p class="text-sm font-semibold text-gray-500">Email</p>
+              <a href="vishesh.purohit19@gmail.com" class="text-gray-900 hover:underline">vishesh.purohit19@gmail.com</a>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-gray-500">Phone</p>
+              <a href="tel:+918233441445" class="text-gray-900 hover:underline">+91 8233441445</a>
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <p class="text-sm font-semibold text-gray-500 mb-3">Follow Me</p>
+            <div class="flex gap-4">
+              <a href="https://github.com/vishesh-purohit" target="_blank" rel="noopener" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-900 text-white hover:bg-black transition">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/vishesh-purohit-b02591103/" target="_blank" rel="noopener" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-900 text-white hover:bg-black transition">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+              <a href="https://wa.me/918233441445" target="_blank" rel="noopener" class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-green-600 text-white hover:bg-green-700 transition">
+                <svg class="w-5 h-5" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+                  <path d="M16 3C9.925 3 5 7.925 5 14c0 2.2.65 4.246 1.77 5.96L6 29l9.2-2.4C16.8 26.86 18.37 27 20 27c6.075 0 11-4.925 11-11S26.075 5 20 5 9 9.925 9 16c0 1.76.47 3.41 1.29 4.83L9 25l4.34-1.15C14.56 24.6 15.26 24.8 16 24.8 22.075 24.8 27 19.875 27 13.8S22.075 2.8 16 2.8z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
