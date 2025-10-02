@@ -1,32 +1,29 @@
-
-<header class="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur border-b border-gray-200">
+<header class="fixed top-0 inset-x-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur border-b border-gray-200 dark:border-gray-700">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
+    <div class="h-16 flex items-center justify-between">
       <!-- Logo -->
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <div class="inline-block font-extrabold tracking-tight">
-          <%= link_to "Vishesh Purohit", root_path, class: "text-xl font-bold text-gray-900" %>
-        </div>
+      <div class="flex items-center gap-2">
+        <%= link_to "Vishesh Purohit", root_path, class: "text-xl font-bold text-gray-900 dark:text-white" %>
       </div>
-    
-      <nav class="hidden sm:flex items-center gap-6 text-sm text-gray-700">
-        <%= link_to "Home", root_path, class: "hover:text-gray-900" %>
-        <%= link_to "Skills", root_path(anchor: 'skills'), class: "hover:text-gray-900" %>
-        <%= link_to "Experience", root_path(anchor: 'experience'), class: "hover:text-gray-900" %>
-        <%= link_to "Contact", root_path(anchor: 'contact'), class: "hover:text-gray-900" %>
-        <a href="#contact" class="rounded-md bg-gray-900 px-3 py-1.5 text-white">Let's Talk</a>
-        <button id="theme-toggle" class="ml-2 inline-flex items-center justify-center h-9 w-9 rounded-full border border-gray-300 text-gray-700 hover:bg-gray-100" aria-label="Toggle dark mode">
+
+      <!-- Desktop Nav -->
+      <nav class="hidden sm:flex items-center gap-6 text-sm text-gray-700 dark:text-gray-300">
+        <%= link_to "Home", root_path, class: "hover:text-gray-900 dark:hover:text-white" %>
+        <%= link_to "Skills", root_path(anchor: 'skills'), class: "hover:text-gray-900 dark:hover:text-white" %>
+        <%= link_to "Experience", root_path(anchor: 'experience'), class: "hover:text-gray-900 dark:hover:text-white" %>
+        <%= link_to "Contact", root_path(anchor: 'contact'), class: "hover:text-gray-900 dark:hover:text-white" %>
+        <a href="#contact" class="rounded-md bg-gray-900 dark:bg-white px-3 py-1.5 text-white dark:text-gray-900">Let's Talk</a>
+
+        <!-- Dark Mode Toggle -->
+        <button id="theme-toggle" class="ml-2 inline-flex items-center justify-center h-9 w-9 rounded-full border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="Toggle dark mode">
           <span id="icon-sun" class="hidden">☀️</span>
           <span id="icon-moon">🌙</span>
         </button>
       </nav>
 
-
-      <!-- Mobile menu button -->
+      <!-- Mobile Menu Button -->
       <div class="md:hidden flex items-center">
-        <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
-          <!-- Icon -->
+        <button id="mobile-menu-button" class="text-gray-700 dark:text-gray-300 focus:outline-none">
           <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M4 6h16M4 12h16M4 18h16" />
@@ -36,49 +33,12 @@
     </div>
   </div>
 
-  <!-- Mobile Menu (hidden by default) -->
-  <div id="mobile-menu" class="hidden md:hidden px-2 pt-2 pb-3 space-y-1 bg-gray-100">
-    <%= link_to "Home", root_path, class: "block text-gray-700 hover:text-gray-900" %>
-    <%= link_to "Skills", root_path(anchor: 'skills'), class: "block text-gray-700 hover:text-gray-900" %>
-    <%= link_to "Experience", root_path(anchor: 'experience'), class: "block text-gray-700 hover:text-gray-900" %>
-    <%= link_to "Contact", root_path(anchor: 'contact'), class: "block text-gray-700 hover:text-gray-900" %>
-    <button id="theme-toggle-mobile" class="mt-2 inline-flex items-center justify-center h-9 w-full rounded-md border border-gray-300 text-gray-700 hover:bg-gray-200" aria-label="Toggle dark mode">Toggle Theme</button>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-2 pt-2 pb-3 space-y-1 bg-gray-100 dark:bg-gray-800">
+    <%= link_to "Home", root_path, class: "block text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" %>
+    <%= link_to "Skills", root_path(anchor: 'skills'), class: "block text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" %>
+    <%= link_to "Experience", root_path(anchor: 'experience'), class: "block text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" %>
+    <%= link_to "Contact", root_path(anchor: 'contact'), class: "block text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" %>
+    <button id="theme-toggle-mobile" class="mt-2 inline-flex items-center justify-center h-9 w-full rounded-md border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700" aria-label="Toggle dark mode">Toggle Theme</button>
   </div>
 </header>
-
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.getElementById("mobile-menu-button");
-    const menu = document.getElementById("mobile-menu");
-    btn.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
-    });
-
-    // Theme toggle with localStorage
-    const root = document.documentElement;
-    const toggle = document.getElementById('theme-toggle');
-    const toggleMobile = document.getElementById('theme-toggle-mobile');
-    const iconSun = document.getElementById('icon-sun');
-    const iconMoon = document.getElementById('icon-moon');
-
-    function setTheme(dark) {
-      if (dark) {
-        root.classList.add('dark');
-        if (iconSun && iconMoon) { iconSun.classList.remove('hidden'); iconMoon.classList.add('hidden'); }
-        localStorage.setItem('theme','dark');
-      } else {
-        root.classList.remove('dark');
-        if (iconSun && iconMoon) { iconSun.classList.add('hidden'); iconMoon.classList.remove('hidden'); }
-        localStorage.setItem('theme','light');
-      }
-    }
-
-    // initialize
-    setTheme(localStorage.getItem('theme') === 'dark');
-    function toggleTheme(){ setTheme(!root.classList.contains('dark')); }
-    if (toggle) toggle.addEventListener('click', toggleTheme);
-    if (toggleMobile) toggleMobile.addEventListener('click', toggleTheme);
-  });
-</script>
